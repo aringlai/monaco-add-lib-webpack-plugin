@@ -34,7 +34,7 @@ class MonacoDtsWebpackPlugin {
             handle(path.resolve(_path, child))
           })
         } catch (error) {
-          // console.log(error)
+          console.log(error)
         }
       }
     }
