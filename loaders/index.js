@@ -5,7 +5,7 @@ module.exports = function(src) {
     try {
       let data = this.fs._readFileSync(file, 'utf8')
       data = data.replace(/\n/g, '\\n').replace(/\"/g, '\'')
-      target = target + '\njavascriptDefaults.addExtraLib("' + data + '","ts:' + file.replace(this.rootContext, '') + '");';
+      target = target + '\njavascriptDefaults.addExtraLib("' + data + '","ts:' + file.replace(this.rootContext, '').replace(/\\/g, '/') + '");';
     } catch (error) {
       console.error(error) 
     }
